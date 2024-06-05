@@ -21,9 +21,13 @@ import java.util.Stack;
  */
 public class IsValid {
     public static boolean isValid(String s) {
+        // 定义括号匹配的映射
         Stack<Character> stack =new Stack<>();
+
+        // 遍历字符串中的每一个字符
         for (char c:s.toCharArray()){
             if(c=='(' || c=='[' || c=='{'){
+                // 如果是左括号，压入栈中
                 stack.push(c);
             }
             else {
@@ -31,11 +35,13 @@ public class IsValid {
                     return false;
                 }
                 char top =stack.pop();
+                // 检查栈顶元素是否匹配当前的右括号
                 if ((c==')'&&top!='(')||(c==']'&&top!='[')||(c=='}'&&top!='{')){
                     return false;
                 }
             }
         }
+        // 如果栈为空，说明所有括号匹配
         return stack.isEmpty();
     }
     public static void main(String[] args) {
