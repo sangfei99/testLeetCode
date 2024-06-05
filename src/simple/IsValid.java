@@ -1,4 +1,7 @@
 package simple;
+
+import java.util.Stack;
+
 /*
 20. 有效的括号
 给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串 s ，判断字符串是否有效。
@@ -17,7 +20,26 @@ package simple;
 输出：false
  */
 public class IsValid {
+    public static boolean isValid(String s) {
+        Stack<Character> stack =new Stack<>();
+        for (char c:s.toCharArray()){
+            if(c=='(' || c=='[' || c=='{'){
+                stack.push(c);
+            }
+            else {
+                if(stack.isEmpty()){
+                    return false;
+                }
+                char top =stack.pop();
+                if ((c==')'&&top!='(')||(c==']'&&top!='[')||(c=='}'&&top!='{')){
+                    return false;
+                }
+            }
+        }
+        return stack.isEmpty();
+    }
     public static void main(String[] args) {
-
+        boolean ret = isValid("()[]{}");
+        System.out.println(ret);
     }
 }
