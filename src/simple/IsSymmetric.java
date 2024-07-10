@@ -28,6 +28,7 @@ public class IsSymmetric {
       }
   }
 
+//    isSymmetric方法：判断树是否为空，如果为空则返回true。否则调用isMirror方法判断左子树和右子树是否镜像对称。
     public boolean isSymmetric(TreeNode root) {
         if (root==null){
             return true;
@@ -35,6 +36,7 @@ public class IsSymmetric {
         return isMirror(root.left,root.right);
     }
 
+    //    isMirror方法：递归地检查两棵子树是否镜像对称。如果两棵子树都为空，返回true；如果其中一个为空，返回false；否则，比较当前节点的值并递归检查子节点。
     public boolean isMirror(TreeNode left, TreeNode right) {
         if(left == null && right == null){
          return true;   
