@@ -35,7 +35,7 @@ public class SearchRange {
     public static int findleft(int nums[],int target){
         int left = 0;
         int right = nums.length-1;
-        int result = -1;
+        int result = nums.length;
         while (left<=right){
             int mid = left +(right-left)/2;
             if (nums[mid] >= target) {
@@ -51,7 +51,7 @@ public class SearchRange {
     public static int findright(int nums[],int target) {
         int left = 0;
         int right = nums.length - 1;
-        int result = nums.length;
+        int result = -1;
         while (left <= right) {
             int mid = left + (right - left) / 2;
             if (nums[mid] <= target) {
@@ -65,7 +65,7 @@ public class SearchRange {
     }
 
     public static void main(String[] args) {
-        int[] ret = searchRange(new int[]{5,7,7,8,8,10},8);
+        int[] ret = searchRange(new int[]{},0);
         System.out.println(Arrays.toString(ret));
     }
 }
