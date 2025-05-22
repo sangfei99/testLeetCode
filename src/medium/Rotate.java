@@ -22,12 +22,12 @@ import java.util.Arrays;
 向右轮转 2 步: [3,99,-1,-100]
  */
 public class Rotate {
-    public static void rotate(int[] nums, int k) {
+    public static void rotate(int[] nums, int k) {    //在原数组上修改，所以返回的也是原数组nums,不需要额外的返回值
         int n = nums.length;
-        k = k % n;
-        reverse(nums,0,n-1);
-        reverse(nums,0,k-1);
-        reverse(nums,k,n-1);
+        k = k % n; //防止k大于n
+        reverse(nums,0,n-1); //先反转整个数组
+        reverse(nums,0,k-1); //反转前k个
+        reverse(nums,k,n-1);  //反转后面n-k个
     }
     public static void reverse(int[] nums,int start,int end) {
         while (start<end){
