@@ -19,6 +19,7 @@ import java.util.Arrays;
 public class Merge {
     public static int[][] merge(int[][] intervals) {
 
+        return new int[][]{{-1},{-1}};
     }
 
     public static void main(String[] args) {
