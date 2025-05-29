@@ -25,10 +25,10 @@ import java.util.List;
 解释：链表中没有环。
  */
 public class HasCycle {
-     static class ListNode {
+     public static class ListNode {
       int val;
-      ListNode next;
-      ListNode(int x) {
+      public ListNode next;
+      public ListNode(int x) {
           val = x;
           next = null;
       }
