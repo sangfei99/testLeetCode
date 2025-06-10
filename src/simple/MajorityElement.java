@@ -2,7 +2,7 @@ package simple;
 
 /*
 169. 多数元素
-给定一个大小为 n 的数组 nums ，返回其中的多数元素。多数元素是指在数组中出现次数 大于 ? n/2 ? 的元素。
+给定一个大小为 n 的数组 nums ，返回其中的多数元素。多数元素是指在数组中出现次数 大于 ?n/2? 的元素。
 你可以假设数组是非空的，并且给定的数组总是存在多数元素。
 
 示例 1：
@@ -15,15 +15,15 @@ package simple;
  */
 public class MajorityElement {
     public int majorityElement(int[] nums) {
-        int condidate = 0;
+        int candidate = 0;
         int count =0;
         for (int num:nums){
             if (count == 0) {
-                condidate = num;
+                candidate = num;
             }
-            count += (num==condidate) ? 1 : -1;
+            count += (num==candidate) ? 1 : -1;
         }
-        return condidate;
+        return candidate;
     }
 
     public static void main(String[] args) {
