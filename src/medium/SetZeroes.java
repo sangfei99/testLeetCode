@@ -19,19 +19,21 @@ public class SetZeroes {
         int m = matrix.length;
         int n = matrix[0].length;
 
-        boolean fristrowZero = false;
+        boolean firstrowZero = false;
         boolean firstcolZero = false;
 
         //1、判断第一列需不需要置0
         for (int i = 0; i < m; i++) {
             if (matrix[i][0] == 0) {
                 firstcolZero = true;
+                break;
             }
         }
         //2、判断第一行需不需要置0
         for (int i = 0; i < n; i++) {
             if (matrix[0][i] == 0) {
-                fristrowZero = true;
+                firstrowZero = true;
+                break;
             }
         }
         
@@ -61,7 +63,7 @@ public class SetZeroes {
         }
 
         //5、最后处理第一行
-        if (fristrowZero){
+        if (firstrowZero){
             for (int i = 0; i < m; i++) {
                 matrix[i][0] =0;
             }
